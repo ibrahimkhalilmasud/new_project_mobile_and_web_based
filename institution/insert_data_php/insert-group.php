@@ -3,8 +3,8 @@
 session_start();
 
 // Check if the user is logged in, if not then redirect him to login page
-if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
-    header("location: login.php");
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    header("location: ../login.php");
     exit;
 }
 ?>
@@ -14,17 +14,16 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
 
 <head>
     <meta charset="utf-8">
-    <title>Home</title> <!-- title of the page -->
+    <title>Insert Class</title> <!-- title for the page -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> <!-- bootstrap -->
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         
-        <link href="https://fonts.googleapis.com/css?family=Coustard|Lato&display=swap" rel="stylesheet"> <!-- google font -->
- 
-        <!-- some styling -->
+        <link href="https://fonts.googleapis.com/css?family=Coustard|Lato&display=swap" rel="stylesheet">
+ <!-- some styling -->
     <style>
         body {
 
-        background-image: url("images/back22.jpg"); /* background image */
+        background-image: url("../images/back22.jpg");
        
         background-size:cover;
 
@@ -49,22 +48,22 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
 
 <body>
     
-    <!-- Grey with black navbar -->
+    <!-- Grey with black text -->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark" >
 
         <div class="container">  
-            <a class="navbar-brand" href="welcome.php"> <!-- go to welcome page when click on navtitle -->
+            <a class="navbar-brand" href="../welcome.php">
                 <h1 class="text-center navtitle">Schools Management</h1>
             </a>
 
-       
+        <!-- create a navbar dropdown item -->
             <ul class="nav navbar-nav ml-auto">
-                <li class="nav-item dropdown "> <!-- Creating dropdown menu -->
+                <li class="nav-item dropdown ">
                     <a class="navbar-toggler-icon" href="#" id="navbardrop" data-toggle="dropdown"></a>
                     <div class="dropdown-menu">
                         
-                        <a class="dropdown-item" href="reset-password.php">Reset Password</a> <!-- redirect to reset password page -->
-                        <a class="dropdown-item" href="logout.php">Log out</a> <!-- log out -->
+                        <a class="dropdown-item" href="../reset-password.php">Reset Password</a>
+                        <a class="dropdown-item" href="../logout.php">Log out</a>
                        
 
                     </div>
@@ -73,20 +72,16 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
         </div>
     </nav>
     
-    <div class="container" style="padding: 4%;  opacity: 0.7; width:60%;"> 
+    <div class="container" style="padding: 10%;  opacity: 0.7; width:60%;"> 
     <div class="jumbotron" style="background-color: rgb(103, 125, 143); padding:5%;">
-        <h1 class="text-center heads">Welcome <?php echo htmlspecialchars($_SESSION["username"]); ?> </h1> <!-- get school name the page using session -->
-        <h3 class="text-center" style="font-family: 'Coustard', serif; color: white;">How are you ?</h3>
-        <p class="text-center" style="font-family: 'Coustard', serif; color: white;">Have a good day !!!</p>
-
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                        <a type="submit" class="btn" style="font-size: 45px; font-family: 'Coustard', serif; background-color:#5A5C9C; color: rgb(255, 255, 255);"href="insert_data_php/main-insert-page.php">Insert</a>
+                        <a type="submit" class="btn" style="font-size: 45px; font-family: 'Coustard', serif; background-color:#5A5C9C; color: rgb(255, 255, 255);"href="create-class.php">Create Class</a>
                 </div>
                 <br>
                 <div class="col-md-12 text-center" style="padding-top: 2%;">
-                        <a type="submit" class="btn" style="font-size: 45px; font-family: 'Coustard', serif; background-color:#433F61; color: rgb(255, 255, 255);"href="show_data/main-search.php">Search</a>
+                        <a type="submit" class="btn" style="font-size: 45px; font-family: 'Coustard', serif; background-color:#433F61; color: rgb(255, 255, 255);"href="add-students-class.php">Add Students</a>
                 </div>
             </div>
                
@@ -99,8 +94,6 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
 </div>
 
 </body>
-
-<!-- use jquery library to can use the dropdown  -->
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
