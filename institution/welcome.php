@@ -54,7 +54,7 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
 
         <div class="container">  
             <a class="navbar-brand" href="welcome.php"> <!-- go to welcome page when click on navtitle -->
-                <h1 class="text-center navtitle">Schools Management</h1>
+                <h1 class="text-center navtitle">Parent-Teacher Association (PTA)</h1>
             </a>
 
        

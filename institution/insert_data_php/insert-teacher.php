@@ -203,7 +203,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="container">
             <a class="navbar-brand" href="../welcome.php">
-                <h1 class="text-center navtitle">Schools Management</h1>
+                <h1 class="text-center navtitle">Parent-Teacher Association (PTA)</h1>
             </a>
 
             <!-- create a navbar dropdown item -->

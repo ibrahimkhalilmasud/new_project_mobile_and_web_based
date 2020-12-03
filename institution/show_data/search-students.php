@@ -35,7 +35,7 @@
 
         <div class="container">
             <a class="navbar-brand" href="../welcome.php"> <!-- Redirect to welcome page when click on it -->
-                <h1 class="text-center navtitle">Schools Management</h1>
+                <h1 class="text-center navtitle">Parent-Teacher Association (PTA)</h1>
             </a>
 
 
@@ -113,6 +113,7 @@
                             echo "<td align='center'>" . $user['name'] . "</td>";
                             echo "<td align='center'>" . $user['grade'] . "</td>";
                             echo "<td align='center'>" . $user['address'] . "</td>";
+                            
                             $query2 = "SELECT name FROM parents WHERE parents.student_id={$user['id'] }";
                             $result2 = mysqli_query($connect, $query2);
                             $user2 = mysqli_fetch_array($result2);

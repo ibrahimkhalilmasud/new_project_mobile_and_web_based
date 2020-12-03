@@ -14,12 +14,11 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
 
 <head>
     <meta charset="utf-8">
-    <title>Insert</title> <!-- title for the page -->
+    <title>Search</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <link href="https://fonts.googleapis.com/css?family=Coustard|Lato&display=swap" rel="stylesheet">
 
-    <!-- some styling -->
     <style>
         body {
 
@@ -57,7 +56,7 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
                 <h1 class="text-center navtitle">Parent-Teacher Association (PTA)</h1>
             </a>
 
-        <!-- create a navbar dropdown item -->
+
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item dropdown ">
                     <a class="navbar-toggler-icon" href="#" id="navbardrop" data-toggle="dropdown"></a>
@@ -83,8 +82,8 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
                 <img src="../images/student-icon.png" class="card-img-top mx-auto d-block" alt="student icon" style="width: 50%; height: 50%;" >
                     <div class="col-md-12 text-center">
                         <h5 class="card-title">Students</h5>
-                        <p class="card-text">adding students to your school.</p>
-                        <a href="insert-student.php" class="btn btn-primary">Add Student</a>
+                        <p class="card-text">Search Students.</p>
+                        <a href="search-students.php" class="btn btn-primary">Students</a>
                     </div>
                 </div>
             </div>
@@ -94,8 +93,8 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
                 <img src="../images/teacher-icon.png" class="card-img-top mx-auto d-block" alt="parent icon" style="width: 50%; height: 50%;" >
                     <div class="col-md-12 text-center">
                         <h5 class="card-title">Parents</h5>
-                        <p class="card-text">Adding Parent of student on your school.</p>
-                        <a href="insert-parent.php" class="btn btn-primary">Add Parent</a>
+                        <p class="card-text">Search Parents.</p>
+                        <a href="search-parents.php" class="btn btn-primary">Parents</a>
                     </div>
                 </div>
             </div>
@@ -105,8 +104,8 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
                 <img src="../images/parent-icon.png" class="card-img-top mx-auto d-block" alt="teacher icon" style="width: 50%; height: 50%;" >
                     <div class="col-md-12 text-center">
                         <h5 class="card-title">Teachers</h5>
-                        <p class="card-text">Adding teachers working at your school.</p>
-                        <a href="insert-teacher.php" class="btn btn-primary">Add Teacher</a>
+                        <p class="card-text">Search Teachers.</p>
+                        <a href="search-teachers.php" class="btn btn-primary">Teachers</a>
                     </div>
                 </div>
             </div>
@@ -120,9 +119,9 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
                 <div class="card-body">
                 <img src="../images/class-icon.png" class="card-img-top mx-auto d-block" alt="class icon" style="width: 50%; height: 50%;" >
                     <div class="col-md-12 text-center">
-                        <h5 class="card-title">Class</h5>
-                        <p class="card-text">Adding class information on your school.</p>
-                        <a href="insert-group.php" class="btn btn-primary">Add Class</a>
+                        <h5 class="card-title">Classes</h5>
+                        <p class="card-text">Search Classes.</p>
+                        <a href="search-classes.php" class="btn btn-primary">Classes</a>
                     </div>
                 </div>
             </div>
@@ -133,8 +132,8 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
                 <img src="../images/activites-icon.png" class="card-img-top mx-auto d-block" alt="activities icon" style="width: 50%; height: 45%;" >
                     <div class="col-md-12 text-center">
                         <h5 class="card-title">Activites</h5>
-                        <p class="card-text">Adding Activities that student make at the school.</p>
-                        <a href="insert-activity.php" class="btn btn-primary">Add Activity</a>
+                        <p class="card-text">Search Activities.</p>
+                        <a href="search-activities.php" class="btn btn-primary">Activities</a>
                     </div>
                 </div>
             </div>
@@ -147,8 +146,8 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
                 <img src="../images/child-feedback-icon.png" class="card-img-top mx-auto d-block" alt="feedback icon" style="width: 50%; height: 45%;" >
                     <div class="col-md-12 text-center">
                         <h5 class="card-title">Child Feedback</h5>
-                        <p class="card-text">Adding feedback for child that will appear to parent.</p>
-                        <a href="insert-child-feedback.php" class="btn btn-primary">Add Child Feedback</a>
+                        <p class="card-text">show child feedbacks.</p>
+                        <a href="search-children-feedback.php" class="btn btn-primary">Child Feedbacks</a>
                     </div>
                 </div>
             </div>
@@ -160,9 +159,9 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
                 <div class="card-body">
                 <img src="../images/time-table-icon.png" class="card-img-top mx-auto d-block" alt="time table icon" style="width: 50%; height: 45%;" >
                     <div class="col-md-12 text-center">
-                        <h5 class="card-title">Time Table</h5>
-                        <p class="card-text">Adding Time Table for school that will make it easy for users.</p>
-                        <a href="insert_schedule.php" class="btn btn-primary">Add Time Table</a>
+                        <h5 class="card-title">Time Tables</h5>
+                        <p class="card-text">Time Tables.</p>
+                        <a href="search-schedules.php" class="btn btn-primary">Time Tables</a>
                     </div>
                 </div>
             </div>
@@ -173,8 +172,8 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
                 <img src="../images/emergency-people-icon.png" class="card-img-top mx-auto d-block" alt="emergency people icon" style="width: 50%; height: 45%;" >
                     <div class="col-md-12 text-center">
                         <h5 class="card-title">Emergency people</h5>
-                        <p class="card-text">Adding emergency people information that are allowed to take child from school.</p>
-                        <a href="insert_people_emergency.php" class="btn btn-primary">Add Emergency People</a>
+                        <p class="card-text">Show Emergency People.</p>
+                        <a href="search-people-emergency.php" class="btn btn-primary">Emergency People</a>
                     </div>
                 </div>
             </div>
@@ -185,8 +184,8 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
                 <img src="../images/medication-icon.png" class="card-img-top mx-auto d-block" alt="medication icon" style="width: 50%; height: 45%;" >
                     <div class="col-md-12 text-center">
                         <h5 class="card-title">Medication</h5>
-                        <p class="card-text">Adding Medication cases for students to deal with them in a good way.</p>
-                        <a href="insert-medication.php" class="btn btn-primary">Add Medication</a>
+                        <p class="card-text">Show Medication.</p>
+                        <a href="search-medications.php" class="btn btn-primary">Medication</a>
                     </div>
                 </div>
             </div>
@@ -197,8 +196,8 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
                 <img src="../images/fees-icon.png" class="card-img-top mx-auto d-block" alt="fees icon" style="width: 50%; height: 45%;" >
                     <div class="col-md-12 text-center">
                         <h5 class="card-title">Fees</h5>
-                        <p class="card-text">Confirm that parent paid the fees to the school for the current year.</p>
-                        <a href="insert-fees.php" class="btn btn-primary">Add Fees</a>
+                        <p class="card-text">Show Fees.</p>
+                        <a href="search-fees.php" class="btn btn-primary">Fees</a>
                     </div>
                 </div>
             </div>
@@ -209,8 +208,8 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
                 <img src="../images/sibling-icon.png" class="card-img-top mx-auto d-block" alt="sibling icon" style="width: 50%; height: 45%;" >
                     <div class="col-md-12 text-center">
                         <h5 class="card-title">sibling</h5>
-                        <p class="card-text">Adding sibling of student this will help you to invite him to your school when he grows.</p>
-                        <a href="insert-sibling.php" class="btn btn-primary">Add sibling</a>
+                        <p class="card-text">Search sibling .</p>
+                        <a href="search-sibling.php" class="btn btn-primary">sibling</a>
                     </div>
                 </div>
             </div>
@@ -221,8 +220,21 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
                 <img src="../images/staff-member-icon.png" class="card-img-top mx-auto d-block" alt="staff member icon" style="width: 50%; height: 45%;" >
                     <div class="col-md-12 text-center">
                         <h5 class="card-title">Staff</h5>
-                        <p class="card-text">Adding stuff members informations that are working in school.</p>
-                        <a href="insert-staff.php" class="btn btn-primary">Add Staff Member</a>
+                        <p class="card-text">Show staff members.</p>
+                        <a href="search-staffs.php" class="btn btn-primary">Staff Members</a>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="card" style="width: 18rem; height: 22rem; margin: 2%;">
+                
+                <div class="card-body">
+                <img src="../images/complaint-icon.png" class="card-img-top mx-auto d-block" alt="staff member icon" style="width: 50%; height: 45%;" >
+                    <div class="col-md-12 text-center">
+                        <h5 class="card-title">Complaints</h5>
+                        <p class="card-text">Show Complaints from users.</p>
+                        <a href="search-complaints.php" class="btn btn-primary">Complaints</a>
                     </div>
                 </div>
             </div>

@@ -180,7 +180,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="container">
             <a class="navbar-brand" href="welcome.php">
-                <h1 class="navtitle">Schools Management</h1>  <!-- Navbar Title -->
+                <h1 class="navtitle">Parent-Teacher Association (PTA)</h1>  <!-- Navbar Title -->
              
             </a>
     </nav>

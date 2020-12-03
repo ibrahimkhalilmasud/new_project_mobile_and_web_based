@@ -35,7 +35,7 @@
 
         <div class="container">
             <a class="navbar-brand" href="../welcome.php"> <!-- Redirect to welcome page when click on it -->
-                <h1 class="text-center navtitle">Schools Management</h1>
+                <h1 class="text-center navtitle">Parent-Teacher Association (PTA)</h1>
             </a>
 
 
