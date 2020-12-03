@@ -114,58 +114,9 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
         </div>
 
         <div class="row row h-100 justify-content-center align-items-center">
-            
-        <div class="card" style="width: 18rem; height: 20rem; margin: 2%;">
-                
-                <div class="card-body">
-                <img src="../images/class-icon.png" class="card-img-top mx-auto d-block" alt="class icon" style="width: 50%; height: 50%;" >
-                    <div class="col-md-12 text-center">
-                        <h5 class="card-title">Class</h5>
-                        <p class="card-text">Adding class information on your school.</p>
-                        <a href="insert-group.php" class="btn btn-primary">Add Class</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card" style="width: 18rem; height: 20rem; margin: 2%;">
-                
-                <div class="card-body">
-                <img src="../images/activites-icon.png" class="card-img-top mx-auto d-block" alt="activities icon" style="width: 50%; height: 45%;" >
-                    <div class="col-md-12 text-center">
-                        <h5 class="card-title">Activites</h5>
-                        <p class="card-text">Adding Activities that student make at the school.</p>
-                        <a href="insert-activity.php" class="btn btn-primary">Add Activity</a>
-                    </div>
-                </div>
-            </div>
-
-    
-
-            <div class="card" style="width: 18rem; height: 20rem; margin: 2%;">
-                
-                <div class="card-body">
-                <img src="../images/child-feedback-icon.png" class="card-img-top mx-auto d-block" alt="feedback icon" style="width: 50%; height: 45%;" >
-                    <div class="col-md-12 text-center">
-                        <h5 class="card-title">Child Feedback</h5>
-                        <p class="card-text">Adding feedback for child that will appear to parent.</p>
-                        <a href="insert-child-feedback.php" class="btn btn-primary">Add Child Feedback</a>
-                    </div>
-                </div>
-            </div>
 
 
-            
-            <div class="card" style="width: 18rem; height: 22rem; margin: 2%;">
-                
-                <div class="card-body">
-                <img src="../images/time-table-icon.png" class="card-img-top mx-auto d-block" alt="time table icon" style="width: 50%; height: 45%;" >
-                    <div class="col-md-12 text-center">
-                        <h5 class="card-title">Time Table</h5>
-                        <p class="card-text">Adding Time Table for school that will make it easy for users.</p>
-                        <a href="insert_schedule.php" class="btn btn-primary">Add Time Table</a>
-                    </div>
-                </div>
-            </div>
+
             
             <div class="card" style="width: 18rem; height: 22rem; margin: 2%;">
                 
@@ -179,17 +130,6 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
                 </div>
             </div>
 
-            <div class="card" style="width: 18rem; height: 22rem; margin: 2%;">
-                
-                <div class="card-body">
-                <img src="../images/medication-icon.png" class="card-img-top mx-auto d-block" alt="medication icon" style="width: 50%; height: 45%;" >
-                    <div class="col-md-12 text-center">
-                        <h5 class="card-title">Medication</h5>
-                        <p class="card-text">Adding Medication cases for students to deal with them in a good way.</p>
-                        <a href="insert-medication.php" class="btn btn-primary">Add Medication</a>
-                    </div>
-                </div>
-            </div>
 
             <div class="card" style="width: 18rem; height: 22rem; margin: 2%;">
                 
@@ -202,30 +142,7 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
                     </div>
                 </div>
             </div>
-
-            <div class="card" style="width: 18rem; height: 22rem; margin: 2%;">
-                
-                <div class="card-body">
-                <img src="../images/sibling-icon.png" class="card-img-top mx-auto d-block" alt="sibling icon" style="width: 50%; height: 45%;" >
-                    <div class="col-md-12 text-center">
-                        <h5 class="card-title">sibling</h5>
-                        <p class="card-text">Adding sibling of student this will help you to invite him to your school when he grows.</p>
-                        <a href="insert-sibling.php" class="btn btn-primary">Add sibling</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card" style="width: 18rem; height: 22rem; margin: 2%;">
-                
-                <div class="card-body">
-                <img src="../images/staff-member-icon.png" class="card-img-top mx-auto d-block" alt="staff member icon" style="width: 50%; height: 45%;" >
-                    <div class="col-md-12 text-center">
-                        <h5 class="card-title">Staff</h5>
-                        <p class="card-text">Adding stuff members informations that are working in school.</p>
-                        <a href="insert-staff.php" class="btn btn-primary">Add Staff Member</a>
-                    </div>
-                </div>
-            </div>
+            
 
         </div>
     </div>

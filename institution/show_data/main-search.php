@@ -99,6 +99,7 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
                 </div>
             </div>
 
+<!-- Teachers            -->
             <div class="card" style="width: 18rem; height: 20rem; margin: 2%;">
                 <div class="card-body">
                 <img src="../images/parent-icon.png" class="card-img-top mx-auto d-block" alt="teacher icon" style="width: 50%; height: 50%;" >
@@ -114,58 +115,10 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
 
         <div class="row row h-100 justify-content-center align-items-center">
             
-        <div class="card" style="width: 18rem; height: 20rem; margin: 2%;">
-                
-                <div class="card-body">
-                <img src="../images/class-icon.png" class="card-img-top mx-auto d-block" alt="class icon" style="width: 50%; height: 50%;" >
-                    <div class="col-md-12 text-center">
-                        <h5 class="card-title">Classes</h5>
-                        <p class="card-text">Search Classes.</p>
-                        <a href="search-classes.php" class="btn btn-primary">Classes</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card" style="width: 18rem; height: 20rem; margin: 2%;">
-                
-                <div class="card-body">
-                <img src="../images/activites-icon.png" class="card-img-top mx-auto d-block" alt="activities icon" style="width: 50%; height: 45%;" >
-                    <div class="col-md-12 text-center">
-                        <h5 class="card-title">Activites</h5>
-                        <p class="card-text">Search Activities.</p>
-                        <a href="search-activities.php" class="btn btn-primary">Activities</a>
-                    </div>
-                </div>
-            </div>
-
-    
-
-            <div class="card" style="width: 18rem; height: 20rem; margin: 2%;">
-                
-                <div class="card-body">
-                <img src="../images/child-feedback-icon.png" class="card-img-top mx-auto d-block" alt="feedback icon" style="width: 50%; height: 45%;" >
-                    <div class="col-md-12 text-center">
-                        <h5 class="card-title">Child Feedback</h5>
-                        <p class="card-text">show child feedbacks.</p>
-                        <a href="search-childeren-feedback.php" class="btn btn-primary">Child Feedbacks</a>
-                    </div>
-                </div>
-            </div>
 
 
-            
-            <div class="card" style="width: 18rem; height: 22rem; margin: 2%;">
-                
-                <div class="card-body">
-                <img src="../images/time-table-icon.png" class="card-img-top mx-auto d-block" alt="time table icon" style="width: 50%; height: 45%;" >
-                    <div class="col-md-12 text-center">
-                        <h5 class="card-title">Time Tables</h5>
-                        <p class="card-text">Time Tables.</p>
-                        <a href="search-schedules.php" class="btn btn-primary">Time Tables</a>
-                    </div>
-                </div>
-            </div>
-            
+
+<!-- Emergency people                 -->
             <div class="card" style="width: 18rem; height: 22rem; margin: 2%;">
                 
                 <div class="card-body">
@@ -178,18 +131,8 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
                 </div>
             </div>
 
-            <div class="card" style="width: 18rem; height: 22rem; margin: 2%;">
-                
-                <div class="card-body">
-                <img src="../images/medication-icon.png" class="card-img-top mx-auto d-block" alt="medication icon" style="width: 50%; height: 45%;" >
-                    <div class="col-md-12 text-center">
-                        <h5 class="card-title">Medication</h5>
-                        <p class="card-text">Show Medication.</p>
-                        <a href="search-medications.php" class="btn btn-primary">Medication</a>
-                    </div>
-                </div>
-            </div>
 
+<!-- fees -->
             <div class="card" style="width: 18rem; height: 22rem; margin: 2%;">
                 
                 <div class="card-body">
@@ -201,43 +144,12 @@ if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
                     </div>
                 </div>
             </div>
+         
 
-            <div class="card" style="width: 18rem; height: 22rem; margin: 2%;">
-                
-                <div class="card-body">
-                <img src="../images/sibling-icon.png" class="card-img-top mx-auto d-block" alt="sibling icon" style="width: 50%; height: 45%;" >
-                    <div class="col-md-12 text-center">
-                        <h5 class="card-title">sibling</h5>
-                        <p class="card-text">Search sibling .</p>
-                        <a href="search-sibling.php" class="btn btn-primary">sibling</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card" style="width: 18rem; height: 22rem; margin: 2%;">
-                
-                <div class="card-body">
-                <img src="../images/staff-member-icon.png" class="card-img-top mx-auto d-block" alt="staff member icon" style="width: 50%; height: 45%;" >
-                    <div class="col-md-12 text-center">
-                        <h5 class="card-title">Staff</h5>
-                        <p class="card-text">Show staff members.</p>
-                        <a href="search-staffs.php" class="btn btn-primary">Staff Members</a>
-                    </div>
-                </div>
             </div>
 
             
-            <div class="card" style="width: 18rem; height: 22rem; margin: 2%;">
-                
-                <div class="card-body">
-                <img src="../images/complaint-icon.png" class="card-img-top mx-auto d-block" alt="staff member icon" style="width: 50%; height: 45%;" >
-                    <div class="col-md-12 text-center">
-                        <h5 class="card-title">Complaints</h5>
-                        <p class="card-text">Show Complaints from users.</p>
-                        <a href="search-complaints.php" class="btn btn-primary">Complaints</a>
-                    </div>
-                </div>
-            </div>
+
 
         </div>
     </div>

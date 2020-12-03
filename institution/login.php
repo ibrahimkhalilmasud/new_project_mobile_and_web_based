@@ -98,7 +98,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
       <!-- css style -->
-      <!-- Setting backgroung   -->
+      <!-- Setting background   -->
       <!-- Some Padding  -->
       <!-- Adding small shadow to navbar -->
       <!-- Adding some fonts  -->
@@ -166,7 +166,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="card-body">
                             <h1 class="text-center">Welcome</h1>  <!-- Title for the card  -->
                             <p class="text-center font-weight-bold">Please fill in your credentials to login.</p>   <!-- giving the user instructions -->
-                            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">  <!-- making a form when it posted then check data and make the login proccess -->
+                            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">  <!-- making a form when it posted then check data and make the login process -->
                                 <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">  <!-- Adding the username -->
                                     <label>Username</label>  
                                     <input type="text" name="username" class="form-control" value="<?php echo $username; ?>">  <!-- The input that will be used to continue the login process  -->
@@ -182,7 +182,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                         <input type="submit" class="btn btn-primary" value="Login">  <!-- Submit button for the process  -->
                                     </div>
                                 </div>
-                                <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>  <!-- if you want to register or add a school redirct user to sign up page  -->
+                                <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>  <!-- if you want to register or add a school redirect user to sign up page  -->
                             </form>
                         </div>
                     </div>

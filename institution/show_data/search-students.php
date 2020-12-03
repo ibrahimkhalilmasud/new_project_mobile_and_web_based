@@ -113,7 +113,6 @@
                             echo "<td align='center'>" . $user['name'] . "</td>";
                             echo "<td align='center'>" . $user['grade'] . "</td>";
                             echo "<td align='center'>" . $user['address'] . "</td>";
-                            
                             $query2 = "SELECT name FROM parents WHERE parents.student_id={$user['id'] }";
                             $result2 = mysqli_query($connect, $query2);
                             $user2 = mysqli_fetch_array($result2);
