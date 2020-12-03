@@ -90,7 +90,7 @@
                     session_start();
 
                     // Check if the user is logged in, if not then redirect him to login page
-                    if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+                    if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
                         echo "<br/>" . "Please Login" . "<br/>";
                         exit;
                     }
@@ -99,7 +99,7 @@
 
 
                     $query = "SELECT * FROM fees WHERE  fees.student_id='$student_id' "; // query for getting fees
-                    $result = mysqli_query($link, $query);
+                    $result = mysqli_query($connect, $query);
 
                     $total=0;
 
@@ -110,7 +110,7 @@
                             $id = $user['id'];
                             
                             $query2 = "SELECT name FROM students WHERE students.id={$user['student_id'] }";
-                            $result2 = mysqli_query($link, $query2);
+                            $result2 = mysqli_query($connect, $query2);
                             $user2 = mysqli_fetch_array($result2);
                             echo "<td align='center'>" . $user['fees_amount'] .'$'. "</td>";
                             echo "<td align='center'>" . $user2['name'] . "</td>";
@@ -124,7 +124,7 @@
 
                         echo "<td align='center'>".'Total : '. $total .'$'. "</td>"; // show the total money 
                 }
-                    mysqli_close($link);
+                    mysqli_close($connect);
                     ?>
         </table>
     </div>

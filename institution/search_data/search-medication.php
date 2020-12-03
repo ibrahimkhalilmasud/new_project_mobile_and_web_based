@@ -4,7 +4,7 @@
 session_start();
 
 // Check if the user is logged in, if not then redirect him to login page
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
   echo "<br/>"."Please Login"."<br/>";
     exit;
 }
@@ -16,13 +16,13 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
    
 
   $query = "SELECT * FROM students  WHERE name LIKE '{$_POST['query']}%' AND students.school_id='{$_SESSION['id']}'";
-    $result = mysqli_query($link, $query);
+    $result = mysqli_query($connect, $query);
  
   if (mysqli_num_rows($result) > 0) {
      while ($user = mysqli_fetch_array($result)) {
       
         $query2 = "SELECT id FROM medication WHERE medication.student_id={$user['id'] }";
-        $result2 = mysqli_query($link, $query2);
+        $result2 = mysqli_query($connect, $query2);
         $user2 = mysqli_fetch_array($result2);
     if($user2['id']!=null){  // to make sure not to show all students just students that have medication
       echo "<br/>";

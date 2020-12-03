@@ -3,7 +3,7 @@
 session_start();
 
 // Check if the user is logged in, if not then redirect him to login page
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
     header("location: ../login.php");
     exit;
 }
@@ -56,7 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Prepare an insert statement
     $sql = "UPDATE schedules SET grade=?,appointment1=?,appointment2=?,appointment3=?,appointment4=?,appointment5=?,appointment6=?,appointment7=?,appointment8=? WHERE id='$schedule_id'";
 
-        if ($stmt = mysqli_prepare($link, $sql)) {
+        if ($stmt = mysqli_prepare($connect, $sql)) {
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt,"sssssssss",$param_grade,$param_appointment1,$param_appointment2,$param_appointment3,$param_appointment4,$param_appointment5,$param_appointment6,$param_appointment7,$param_appointment8);
 
@@ -96,13 +96,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Close connection
-    mysqli_close($link);
+    mysqli_close($connect);
 } else{
 
     // this is used to get the old data from database and show it at inputs this happen before you press submit (posting)
 
     $query = "SELECT * FROM schedules WHERE schedules.id={$schedule_id}";
-    $result = mysqli_query($link, $query);
+    $result = mysqli_query($connect, $query);
    
     if (mysqli_num_rows($result) > 0) {
         while ($user = mysqli_fetch_array($result)) {
@@ -126,7 +126,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
    
-        mysqli_close($link);
+        mysqli_close($connect);
     }
 }
 

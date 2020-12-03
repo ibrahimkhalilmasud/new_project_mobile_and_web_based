@@ -91,7 +91,7 @@
                     session_start();
 
                     // Check if the user is logged in, if not then redirect him to login page
-                    if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+                    if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
                         echo "<br/>" . "Please Login" . "<br/>";
                         exit;
                     }
@@ -100,7 +100,7 @@
 
 
                     $query = "SELECT * FROM  medication ORDER BY name";
-                    $result = mysqli_query($link, $query);
+                    $result = mysqli_query($connect, $query);
 
 
                     if (mysqli_num_rows($result) > 0) {
@@ -110,7 +110,7 @@
                             $id = $user['id'];
                             echo "<td align='center'>" . $user['id'] . "</td>";
                             $query2 = "SELECT name FROM students WHERE students.id={$user['student_id'] }";
-                            $result2 = mysqli_query($link, $query2);
+                            $result2 = mysqli_query($connect, $query2);
                             $user2 = mysqli_fetch_array($result2);
                             echo "<td align='center'>" . $user2['name'] . "</td>";
                             echo "<td align='center'>" . $user['name'] . "</td>";
@@ -124,7 +124,7 @@
                         }
                     }
                 }
-                    mysqli_close($link);
+                    mysqli_close($connect);
                     ?>
         </table>
     </div>

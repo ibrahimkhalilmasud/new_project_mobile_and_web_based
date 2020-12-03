@@ -16,16 +16,16 @@ $sql = "DELETE FROM people_emergency WHERE id='$people_id'";
 
 
 
- if ($link->query($sql) === TRUE) {
+ if ($connect->query($sql) === TRUE) {
     echo "<script>
     alert('This Person Deleted Successfully');
     window.location.href='../show_data/search-people-emergency.php';
     </script>";
 } else {
-    echo "Error deleting record: " . $link->error;
+    echo "Error deleting record: " . $connect->error;
 }
 
-$link->close();
+$connect->close();
 
     
 

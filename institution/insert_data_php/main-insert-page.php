@@ -3,7 +3,7 @@
 session_start();
 
 // Check if the user is logged in, if not then redirect him to login page
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
     header("location: ../login.php");
     exit;
 }
@@ -206,11 +206,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             <div class="card" style="width: 18rem; height: 22rem; margin: 2%;">
                 
                 <div class="card-body">
-                <img src="../images/sibiling-icon.png" class="card-img-top mx-auto d-block" alt="sibiling icon" style="width: 50%; height: 45%;" >
+                <img src="../images/sibling-icon.png" class="card-img-top mx-auto d-block" alt="sibling icon" style="width: 50%; height: 45%;" >
                     <div class="col-md-12 text-center">
-                        <h5 class="card-title">Sibiling</h5>
-                        <p class="card-text">Adding Sibiling of student this will help you to invite him to your school when he grows.</p>
-                        <a href="insert-sibiling.php" class="btn btn-primary">Add Sibiling</a>
+                        <h5 class="card-title">sibling</h5>
+                        <p class="card-text">Adding sibling of student this will help you to invite him to your school when he grows.</p>
+                        <a href="insert-sibling.php" class="btn btn-primary">Add sibling</a>
                     </div>
                 </div>
             </div>

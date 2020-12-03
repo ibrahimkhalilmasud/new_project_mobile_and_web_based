@@ -3,7 +3,7 @@
 session_start();
 
 // Check if the user is logged in, if not then redirect him to login page
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
   header("location: ../login.php");
   exit;
 }
@@ -18,7 +18,7 @@ $name_err =  $subject_err = $task_err = $time_of_class_err = $teacher_id_err = "
 
 // Check if there are teachers
 
-$result = mysqli_query($link,"SELECT * FROM teachers WHERE teachers.school_id='{$_SESSION['id']}'");
+$result = mysqli_query($connect,"SELECT * FROM teachers WHERE teachers.school_id='{$_SESSION['id']}'");
 if (mysqli_num_rows($result) <= 0) {
  
   echo "<script>
@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $teacher_id = $_POST["teacher_id"];
     
     // CHECK IF THIS teacher AT THIS SCHOOL
-    $result1 = mysqli_query($link,"SELECT id FROM teachers WHERE id='{$teacher_id}' AND school_id='{$_SESSION['id']}'");
+    $result1 = mysqli_query($connect,"SELECT id FROM teachers WHERE id='{$teacher_id}' AND school_id='{$_SESSION['id']}'");
     if(mysqli_num_rows($result1) <= 0){
 
   
@@ -102,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO groups (name,subject,time_of_room,school_id,teacher_id) VALUES (?, ?, ?, ?, ?)";
 
 
-    if ($stmt = mysqli_prepare($link, $sql)) {
+    if ($stmt = mysqli_prepare($connect, $sql)) {
       // Bind variables to the prepared statement as parameters
       mysqli_stmt_bind_param($stmt, "ssssi",$param_name, $param_subject,$param_time_of_class, $param_school_id, $param_teacher_id);
 
@@ -130,7 +130,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   // Close connection
-  mysqli_close($link);
+  mysqli_close($connect);
 }
 
 

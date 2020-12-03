@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Sibiling</title> <!-- title for the page  -->
+    <title>sibling</title> <!-- title for the page  -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script> <!-- include jquery library -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> <!-- include bootstrap library -->
   <link href="https://fonts.googleapis.com/css?family=Coustard|Lato&display=swap" rel="stylesheet"> <!-- include two google fonts -->
@@ -88,7 +88,7 @@
                     session_start();
 
                     // Check if the user is logged in, if not then redirect him to login page
-                    if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+                    if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
                         echo "<br/>" . "Please Login" . "<br/>";
                         exit;
                     }
@@ -97,8 +97,8 @@
 
                     $student_id=(int)isset($_GET['student_id']) ? $_GET['student_id'] : '';  // get the activity id
 
-                    $query = "SELECT * FROM sibiling WHERE sibiling.student_id={$student_id} ORDER BY name";
-                    $result = mysqli_query($link, $query);
+                    $query = "SELECT * FROM sibling WHERE sibling.student_id={$student_id} ORDER BY name";
+                    $result = mysqli_query($connect, $query);
 
 
                     if (mysqli_num_rows($result) > 0) {
@@ -115,7 +115,7 @@
                         }
                     }
                 }
-                    mysqli_close($link);
+                    mysqli_close($connect);
                     ?>
         </table>
     </div>

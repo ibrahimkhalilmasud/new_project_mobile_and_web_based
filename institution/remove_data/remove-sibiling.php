@@ -5,27 +5,27 @@ require_once "../config.php";
 
 
 
-$sibiling_id=(int)$_GET['sibiling_id'];   // get the student id  
+$sibling_id=(int)$_GET['sibling_id'];   // get the student id  
 
 
 
  
 
 // sql to delete a record
-$sql = "DELETE FROM sibiling WHERE id='$sibiling_id'";
+$sql = "DELETE FROM sibling WHERE id='$sibling_id'";
 
 
 
- if ($link->query($sql) === TRUE) {
+ if ($connect->query($sql) === TRUE) {
     echo "<script>
-    alert('This Sibiling Deleted Successfully');
-    window.location.href='../show_data/search-sibiling.php';
+    alert('This sibling Deleted Successfully');
+    window.location.href='../show_data/search-sibling.php';
     </script>";
 } else {
-    echo "Error deleting record: " . $link->error;
+    echo "Error deleting record: " . $connect->error;
 }
 
-$link->close();
+$connect->close();
 
     
 

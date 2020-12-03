@@ -3,7 +3,7 @@
 session_start();
 
 // Check if the user is logged in, if not then redirect him to login page
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
     header("location: ../login.php");
     exit;
 }
@@ -63,7 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Prepare an insert statement
     $sql = "UPDATE children_feedback SET teacher_name=?,subject=?,feedback=? WHERE id='$child_feedback_id'";
 
-        if ($stmt = mysqli_prepare($link, $sql)) {
+        if ($stmt = mysqli_prepare($connect, $sql)) {
             // Bind variables to the prepared statement as parameters
             mysqli_stmt_bind_param($stmt, "sss",$param_teacher_name,$param_subject,$param_feedback);
 
@@ -98,13 +98,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Close connection
-    mysqli_close($link);
+    mysqli_close($connect);
 } else{
 
     // this is used to get the old data from database and show it at inputs this happen before you press submit (posting) 
 
     $query = "SELECT * FROM children_feedback WHERE children_feedback.id={$child_feedback_id}";
-    $result = mysqli_query($link, $query);
+    $result = mysqli_query($connect, $query);
    
     if (mysqli_num_rows($result) > 0) {
         while ($user = mysqli_fetch_array($result)) {
@@ -122,7 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
    
-        mysqli_close($link);
+        mysqli_close($connect);
     }
 }
 

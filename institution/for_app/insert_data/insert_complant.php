@@ -16,7 +16,7 @@ $title=$obj['title'];
 $feedback=$obj['feedback'];
 
     // Prepare an insert statement
-    $sql = "INSERT INTO complants (school_id,type,name,number,title,feedback) VALUES ($school_id,'$type','$name','$number','$title','$feedback')";
+    $sql = "INSERT INTO complaints (school_id,type,name,number,title,feedback) VALUES ($school_id,'$type','$name','$number','$title','$feedback')";
 
 
     if(mysqli_query($connect,$sql)){

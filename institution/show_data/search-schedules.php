@@ -76,7 +76,7 @@
                     session_start();
 
                     // Check if the user is logged in, if not then redirect him to login page
-                    if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+                    if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
                         echo "<br/>" . "Please Login" . "<br/>";
                         exit;
                     }
@@ -84,7 +84,7 @@
                     include("../config.php");
 
                     $query = "SELECT * FROM schedules";
-                    $result = mysqli_query($link, $query);
+                    $result = mysqli_query($connect, $query);
 
 
                     if (mysqli_num_rows($result) > 0) {
@@ -132,7 +132,7 @@
                         }
                     }
                 }
-                    mysqli_close($link);
+                    mysqli_close($connect);
                     ?>
         </table>
     </div>

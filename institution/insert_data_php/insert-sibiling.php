@@ -3,7 +3,7 @@
 session_start();
 
 // Check if the user is logged in, if not then redirect him to login page
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
   header("location: ../login.php");
   exit;
 }
@@ -18,7 +18,7 @@ $name_err = $date_of_birth_err =$student_id_err= "";
 
 // Check if there are students
 
-$result = mysqli_query($link,"SELECT * FROM students WHERE students.school_id='{$_SESSION['id']}'");
+$result = mysqli_query($connect,"SELECT * FROM students WHERE students.school_id='{$_SESSION['id']}'");
 if (mysqli_num_rows($result) <= 0) {
  
   echo "<script>
@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   // Validate Address
 
   if (empty(trim($_POST["date_of_birth"]))) {
-    $date_of_birth_err = "Please insert sibiling date_of_birth.";
+    $date_of_birth_err = "Please insert sibling date_of_birth.";
   } else {
     $date_of_birth = trim($_POST["date_of_birth"]);
   }
@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $student_id = $_POST["student_id"];
     
     // CHECK IF THIS STUDENT AT THIS SCHOOL
-    $result1 = mysqli_query($link,"SELECT id FROM students WHERE id='{$student_id}' AND school_id='{$_SESSION['id']}'");
+    $result1 = mysqli_query($connect,"SELECT id FROM students WHERE id='{$student_id}' AND school_id='{$_SESSION['id']}'");
     if(mysqli_num_rows($result1) <= 0){
 
   
@@ -83,10 +83,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   ) {
 
     // Prepare an insert statement
-    $sql = "INSERT INTO sibiling (name,date_of_birth,school_id,student_id) VALUES (?, ?, ?, ?)";
+    $sql = "INSERT INTO sibling (name,date_of_birth,school_id,student_id) VALUES (?, ?, ?, ?)";
 
 
-    if ($stmt = mysqli_prepare($link, $sql)) {
+    if ($stmt = mysqli_prepare($connect, $sql)) {
       // Bind variables to the prepared statement as parameters
       mysqli_stmt_bind_param($stmt,"sssi", $param_name,$param_date_of_birth,$param_school_id,$param_student_id);
 
@@ -102,7 +102,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       // Attempt to execute the prepared statement
       if (mysqli_stmt_execute($stmt)) {
         // Redirect to login page
-        header("location: insert-sibiling.php");
+        header("location: insert-sibling.php");
       } else {
         echo "Something went wrong. Please try again later.";
       }
@@ -113,7 +113,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   // Close connection
-  mysqli_close($link);
+  mysqli_close($connect);
 }
 
 
@@ -124,7 +124,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <head>
   <meta charset="utf-8">
-  <title>Insert Sibiling</title> <!-- title for the page -->
+  <title>Insert sibling</title> <!-- title for the page -->
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -197,7 +197,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 <div class="form-group <?php echo (!empty($name_err)) ? 'has-error' : ''; ?>">
                   <label>Full Name</label>
-                  <input type="text" name="name" class="form-control" value="<?php echo $name; ?>" placeholder="Enter Sibiling Full Name">
+                  <input type="text" name="name" class="form-control" value="<?php echo $name; ?>" placeholder="Enter sibling Full Name">
                   <span class="help-block" style="color:red"><?php echo $name_err; ?></span>
                 </div>
 

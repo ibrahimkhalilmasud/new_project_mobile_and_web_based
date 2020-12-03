@@ -9,20 +9,20 @@ $complant_id=(int)$_GET['complant_id'];   // get the medication id
 
 
 // sql to delete a record
-$sql = "DELETE FROM complants WHERE id='$complant_id'";
+$sql = "DELETE FROM complaints WHERE id='$complant_id'";
 
 
 
- if ($link->query($sql) === TRUE) {
+ if ($connect->query($sql) === TRUE) {
     echo "<script>
     alert('Complant Deleted Successfully');
-    window.location.href='../show_data/search-complants.php';
+    window.location.href='../show_data/search-complaints.php';
     </script>";
 } else {
-    echo "Error deleting record: " . $link->error;
+    echo "Error deleting record: " . $connect->error;
 }
 
-$link->close();
+$connect->close();
 
     
 

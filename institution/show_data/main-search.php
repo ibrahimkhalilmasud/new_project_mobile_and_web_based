@@ -3,7 +3,7 @@
 session_start();
 
 // Check if the user is logged in, if not then redirect him to login page
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
     header("location: ../login.php");
     exit;
 }
@@ -205,11 +205,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             <div class="card" style="width: 18rem; height: 22rem; margin: 2%;">
                 
                 <div class="card-body">
-                <img src="../images/sibiling-icon.png" class="card-img-top mx-auto d-block" alt="sibiling icon" style="width: 50%; height: 45%;" >
+                <img src="../images/sibling-icon.png" class="card-img-top mx-auto d-block" alt="sibling icon" style="width: 50%; height: 45%;" >
                     <div class="col-md-12 text-center">
-                        <h5 class="card-title">Sibiling</h5>
-                        <p class="card-text">Search Sibiling .</p>
-                        <a href="search-sibiling.php" class="btn btn-primary">Sibiling</a>
+                        <h5 class="card-title">sibling</h5>
+                        <p class="card-text">Search sibling .</p>
+                        <a href="search-sibling.php" class="btn btn-primary">sibling</a>
                     </div>
                 </div>
             </div>
@@ -234,7 +234,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                     <div class="col-md-12 text-center">
                         <h5 class="card-title">Complaints</h5>
                         <p class="card-text">Show Complaints from users.</p>
-                        <a href="search-complants.php" class="btn btn-primary">Complaints</a>
+                        <a href="search-complaints.php" class="btn btn-primary">Complaints</a>
                     </div>
                 </div>
             </div>

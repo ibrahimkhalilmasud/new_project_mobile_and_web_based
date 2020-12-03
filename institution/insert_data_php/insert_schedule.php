@@ -3,7 +3,7 @@
 session_start();
 
 // Check if the user is logged in, if not then redirect him to login page
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
   header("location: ../login.php");
   exit;
 }
@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO schedules (grade,appointment1,appointment2,appointment3,appointment4,appointment5,appointment6,appointment7,appointment8,school_id) VALUES (?, ?, ?, ?, ?,?,?,?,?,?)";
 
 
-    if ($stmt = mysqli_prepare($link, $sql)) {
+    if ($stmt = mysqli_prepare($connect, $sql)) {
       // Bind variables to the prepared statement as parameters
       mysqli_stmt_bind_param($stmt, "sssssssssi", $param_grade,$param_ap1,$param_ap2,$param_ap3,$param_ap4,$param_ap5,$param_ap6,$param_ap7,$param_ap8,$param_school_id);
 
@@ -85,7 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   // Close connection
-  mysqli_close($link);
+  mysqli_close($connect);
 }
 
 

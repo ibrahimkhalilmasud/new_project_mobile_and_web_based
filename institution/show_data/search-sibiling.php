@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Sibiling</title> <!-- title for the page  -->
+    <title>sibling</title> <!-- title for the page  -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script> <!-- include jquery library -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> <!-- include bootstrap library -->
   <link href="https://fonts.googleapis.com/css?family=Coustard|Lato&display=swap" rel="stylesheet"> <!-- include two google fonts -->
@@ -88,7 +88,7 @@
                     session_start();
 
                     // Check if the user is logged in, if not then redirect him to login page
-                    if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+                    if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
                         echo "<br/>" . "Please Login" . "<br/>";
                         exit;
                     }
@@ -96,8 +96,8 @@
                     include("../config.php");
 
 
-                    $query = "SELECT * FROM sibiling ORDER BY name";
-                    $result = mysqli_query($link, $query);
+                    $query = "SELECT * FROM sibling ORDER BY name";
+                    $result = mysqli_query($connect, $query);
 
 
                     if (mysqli_num_rows($result) > 0) {
@@ -109,16 +109,16 @@
                             echo "<td align='center'>" . $user['name'] . "</td>";
                             echo "<td align='center'>" . $user['date_of_birth'] . "</td>";
                             $query2 = "SELECT name FROM students WHERE students.id={$user['student_id'] }";
-                            $result2 = mysqli_query($link, $query2);
+                            $result2 = mysqli_query($connect, $query2);
                             $user2 = mysqli_fetch_array($result2);
                             echo "<td align='center'>" . $user2['name'] . "</td>";
-                            echo ("<td align='center'><a href=\"../remove_data/remove-sibiling.php?sibiling_id=".$user['id']."\">Remove</a></td>");
+                            echo ("<td align='center'><a href=\"../remove_data/remove-sibling.php?sibling_id=".$user['id']."\">Remove</a></td>");
                             echo "</tr>";
 
                         }
                     }
                 }
-                    mysqli_close($link);
+                    mysqli_close($connect);
                     ?>
         </table>
     </div>
@@ -129,7 +129,7 @@
         var query = $(this).val();
         if (query != "") {
           $.ajax({
-            url: '../search_data/search-student-sibiling.php',
+            url: '../search_data/search-student-sibling.php',
             method: 'POST',
             data: {
               query: query

@@ -3,7 +3,7 @@
 session_start();
 
 // Check if the user is logged in, if not then redirect him to login page
-if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+if (!isset($_SESSION["logged_in"]) || $_SESSION["logged_in"] !== true) {
   header("location: ../login.php");
   exit;
 }
@@ -20,7 +20,7 @@ $student_id_err=$group_id_err="";
 
 // Check if there are teachers
 
-$result = mysqli_query($link,"SELECT * FROM students WHERE students.school_id='{$_SESSION['id']}'");
+$result = mysqli_query($connect,"SELECT * FROM students WHERE students.school_id='{$_SESSION['id']}'");
 if (mysqli_num_rows($result) <= 0) {
  
   echo "<script>
@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $group_id = $_POST["group_id"];
     
     // CHECK IF THIS teacher AT THIS SCHOOL
-    $result1 = mysqli_query($link,"SELECT id FROM groups WHERE id='{$group_id}' AND school_id='{$_SESSION['id']}'");
+    $result1 = mysqli_query($connect,"SELECT id FROM groups WHERE id='{$group_id}' AND school_id='{$_SESSION['id']}'");
     if(mysqli_num_rows($result1) <= 0){
 
   
@@ -68,7 +68,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $student_id = $_POST["student_id"];
     
     // CHECK IF THIS teacher AT THIS SCHOOL
-    $result1 = mysqli_query($link,"SELECT id FROM students WHERE id='{$student_id}' AND school_id='{$_SESSION['id']}'");
+    $result1 = mysqli_query($connect,"SELECT id FROM students WHERE id='{$student_id}' AND school_id='{$_SESSION['id']}'");
     if(mysqli_num_rows($result1) <= 0){
 
   
@@ -92,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO control_groups (school_id,group_id,student_id) VALUES (?, ?, ?)";
 
 
-    if ($stmt = mysqli_prepare($link, $sql)) {
+    if ($stmt = mysqli_prepare($connect, $sql)) {
       // Bind variables to the prepared statement as parameters
       mysqli_stmt_bind_param($stmt, "iii",$param_school_id, $param_group_id,$param_student_id);
 
@@ -119,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   // Close connection
-  mysqli_close($link);
+  mysqli_close($connect);
 }
 
 
