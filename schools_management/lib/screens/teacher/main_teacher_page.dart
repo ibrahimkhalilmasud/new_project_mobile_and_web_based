@@ -6,8 +6,6 @@ import 'package:schools_management/provider/teacher.dart';
 import 'package:schools_management/screens/login_page.dart';
 import 'package:schools_management/screens/teacher/classes_page_teacher.dart';
 
-
-
 import 'package:schools_management/widgets/card_item.dart';
 
 class MainTeacherPage extends StatefulWidget {
@@ -18,34 +16,26 @@ class MainTeacherPage extends StatefulWidget {
 }
 
 class _MainTeacherPageState extends State<MainTeacherPage> {
+  TeacherInf getTeacherInfo;
 
-    TeacherInf getTeacherInfo;
-    
-    String teacherId;
-    String teacherName;
-    String teacherAddress;
-    String teacherNumber;
-    String teacherSubject;
-    String schoolId;
-
-
-
-  
+  String teacherId;
+  String teacherName;
+  String teacherAddress;
+  String teacherNumber;
+  String teacherSubject;
+  String schoolId;
 
   @override
   Widget build(BuildContext context) {
-
-   
     // get teacher data
-    getTeacherInfo= Provider.of<Teacher>(context).getTeacherInf();
-    
+    getTeacherInfo = Provider.of<Teacher>(context).getTeacherInf();
+
     teacherId = getTeacherInfo.id;
     teacherName = getTeacherInfo.name;
     teacherAddress = getTeacherInfo.address;
     teacherNumber = getTeacherInfo.number;
-    teacherSubject=getTeacherInfo.subject;
-    schoolId=getTeacherInfo.schoolID;
-
+    teacherSubject = getTeacherInfo.subject;
+    schoolId = getTeacherInfo.schoolID;
 
     return WillPopScope(
       onWillPop: () async => false,
@@ -80,8 +70,7 @@ class _MainTeacherPageState extends State<MainTeacherPage> {
                                 fontSize: 25,
                               ),
                             ))),
-
-                             Center(
+                    Center(
                         child: FadeAnimation(
                             1.3,
                             Text(
@@ -138,36 +127,30 @@ class _MainTeacherPageState extends State<MainTeacherPage> {
                     crossAxisSpacing: 10,
                     crossAxisCount: 2,
                     children: <Widget>[
-                      
-                                 CardItem(
-                        desc: 'Classes',
-                        img: 'assets/images/class-icon.png',
-                        color: Color.fromRGBO(120, 99, 101, 1),
-                          function: (){   Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => TeacherClasses(teacherId: teacherId,schoolId:schoolId)),
-                          );
-                        }
-                      ),
-                
-         
-               
-          
-                           CardItem(
-                        desc: 'log Out',
-                        img: 'assets/images/logout-icon.png',
-                        color: Color.fromRGBO(154, 80, 80, 1),
-                              function: (){  
-
+                      CardItem(
+                          desc: 'Classes',
+                          img: 'assets/images/class-icon.png',
+                          color: Color.fromRGBO(120, 99, 101, 1),
+                          function: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => TeacherClasses(
+                                      teacherId: teacherId,
+                                      schoolId: schoolId)),
+                            );
+                          }),
+                      CardItem(
+                          desc: 'log Out',
+                          img: 'assets/images/logout-icon.png',
+                          color: Color.fromRGBO(154, 80, 80, 1),
+                          function: () {
                             Provider.of<Teacher>(context).logOut();
-                             Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => Login()),
-                          );
-                        }
-                      ),
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => Login()),
+                            );
+                          }),
                     ],
                   ),
                 ),

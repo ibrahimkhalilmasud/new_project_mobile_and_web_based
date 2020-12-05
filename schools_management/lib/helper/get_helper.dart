@@ -21,7 +21,7 @@ class GetHelper {
       String dataId, String typeOfData, String inputData) async {
     try {
       final response = await http.post(
-          "http://localhost/institution/for_app/get_data/$typeOfData.php",
+          "http://10.0.2.2/institution/for_app/get_data/$typeOfData.php",
           body: {
             "$inputData": dataId,
           });
@@ -61,7 +61,7 @@ class GetHelper {
           'feedback': feedback
         };
         var response = await http.post(
-          "http://localhost/institution/for_app/insert_data/insert_complant.php",
+          "http://10.0.2.2/institution/for_app/insert_data/insert_complant.php",
           body: json.encode(data),
         );
         if (response.statusCode == 200) {
@@ -128,7 +128,7 @@ class GetHelper {
           'task': task,
         };
         var response = await http.post(
-          "http://localhost/institution/for_app/insert_data/insert_task.php",
+          "http://10.0.2.2/institution/for_app/insert_data/insert_task.php",
           body: json.encode(data),
         );
         if (response.statusCode == 200) {

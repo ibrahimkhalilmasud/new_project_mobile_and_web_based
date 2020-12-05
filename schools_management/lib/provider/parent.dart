@@ -51,14 +51,13 @@ class Parent with ChangeNotifier {
     var response;
     var datauser;
     try {
-      response = await http.post(
-          "http://localhost/institution/for_app/login_parents.php",
-          body: {
-            "username": user
-                .trim(), // we use trim method to avoid spaces that user may make when logging
-            "password": pass
-                .trim(), // we use trim method to avoid spaces that user may make when logging
-          });
+      response = await http
+          .post("http://10.0.2.2/institution/for_app/login_parents.php", body: {
+        "username": user
+            .trim(), // we use trim method to avoid spaces that user may make when logging
+        "password": pass
+            .trim(), // we use trim method to avoid spaces that user may make when logging
+      });
       if (response.statusCode == 200) {
         // if every things are right decode the response and insertInf then return true
         datauser = await json.decode(response.body);

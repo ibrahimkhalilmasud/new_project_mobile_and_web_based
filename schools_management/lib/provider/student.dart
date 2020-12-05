@@ -48,7 +48,7 @@ class Student with ChangeNotifier {
     var datauser;
     try {
       response = await http.post(
-          "http://localhost/institution/for_app/get_data/get_student_data.php",
+          "http://10.0.2.2/institution/for_app/get_data/get_student_data.php",
           body: {
             "id": id, // we will path here student id
           });

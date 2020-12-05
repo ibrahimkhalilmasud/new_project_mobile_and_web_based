@@ -51,7 +51,7 @@ class Teacher with ChangeNotifier {
     var datauser;
     try {
       response = await http.post(
-          "http://localhost/institution/for_app/login_teachers.php",
+          "http://10.0.2.2/institution/for_app/login_teachers.php",
           body: {
             "username": user
                 .trim(), // we use trim method to avoid spaces that user may make when logging
